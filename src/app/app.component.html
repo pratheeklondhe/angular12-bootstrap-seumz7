@@ -1,0 +1,185 @@
+<form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label"
+          >First Name</label
+        >
+        <input
+          type="text"
+          name="fname"
+          placeholder="alen"
+          formControlName="fname"
+          class="form-control form-control-sm"
+        />
+        <div
+          [hidden]="!formdata.controls.fname.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.fname.errors?.required">
+            First Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Last Name</label
+        >
+        <input
+          type="text"
+          name="lname"
+          placeholder="name@example.com"
+          formControlName="lname"
+          class="form-control form-control-sm"
+        />
+        <div
+          [hidden]="!formdata.controls.lname.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.lname.errors?.required">
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Email Id</label
+        >
+        <input
+          type="text"
+          name="emailid"
+          placeholder="name@example.com"
+          formControlName="emailid"
+          class="form-control form-control-sm"
+        />
+        <div
+          [hidden]="!formdata.controls.emailid.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.emailid.errors?.required">
+            Emailid is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Mobile No</label
+        >
+        <input
+          type="text"
+          name="mobile"
+          placeholder="mobile"
+          formControlName="mobile"
+          class="form-control form-control-sm"
+        />
+        <div
+          [hidden]="!formdata.controls.mobile.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.mobile.errors?.required">
+            Mobile No is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label">Address</label>
+        <input
+          type="addr"
+          name="addr"
+          placeholder="name@example.com"
+          formControlName="addr"
+          class="form-control form-control-sm"
+        />
+        {{ addr }}
+        <div
+          [hidden]="!formdata.controls.addr.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.addr.errors?.required">
+            Address is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label">Country</label>
+
+        <select
+          name="pets"
+          class="form-control form-control-sm"
+          formControlName="country"
+        >
+          <option value="" disabled>--Please choose an option--</option>
+          <option value="India">India</option>
+          <option value="Canada">Canada</option>
+        </select>
+        <div
+          [hidden]="!formdata.controls.country.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.country.errors?.required">
+            Country is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label">Role</label>
+
+        <select
+          name="role"
+          class="form-control form-control-sm"
+          formControlName="role"
+        >
+          <option value="" disabled>--Please choose an option--</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+        <div
+          [hidden]="!formdata.controls.role.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.role.errors?.required">
+            Role is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Department</label
+        >
+
+        <select
+          name="pets"
+          id="pet-select"
+          class="form-control form-control-sm"
+          formControlName="department"
+        >
+          <option value="" disabled>--Please choose an option--</option>
+          <option value="Finance">Finance</option>
+          <option value="Staff">Staff</option>
+        </select>
+        <div
+          [hidden]="!formdata.controls.department.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="formdata.controls.department.errors?.required">
+            Department is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6"></div>
+      <div class="col-10"></div>
+
+      <div class="col">
+        <input type="submit" class="forsubmit" value="Log In" />
+      </div>
+    </div>
+  </div>
+</form>
