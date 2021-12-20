@@ -13,12 +13,10 @@
           class="form-control form-control-sm"
         />
         <div
-          [hidden]="!formdata.controls.fname.errors"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.fname.errors }"
           class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.fname.errors?.required">
-            First Name is required
-          </div>
+          Enter a Valid First Name
         </div>
       </div>
 
@@ -34,12 +32,10 @@
           class="form-control form-control-sm"
         />
         <div
-          [hidden]="!formdata.controls.lname.errors"
-          class="alert alert-danger"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.lname.errors }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.lname.errors?.required">
-            Last Name is required
-          </div>
+          Enter a Valid Last Name
         </div>
       </div>
 
@@ -55,12 +51,10 @@
           class="form-control form-control-sm"
         />
         <div
-          [hidden]="!formdata.controls.emailid.errors"
-          class="alert alert-danger"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.emailid.errors }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.emailid.errors?.required">
-            Emailid is required
-          </div>
+          Enter a Valid Email ID
         </div>
       </div>
 
@@ -76,12 +70,10 @@
           class="form-control form-control-sm"
         />
         <div
-          [hidden]="!formdata.controls.mobile.errors"
-          class="alert alert-danger"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.mobile.errors }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.mobile.errors?.required">
-            Mobile No is required
-          </div>
+          Enter a Valid Mobile No
         </div>
       </div>
 
@@ -96,12 +88,10 @@
         />
         {{ addr }}
         <div
-          [hidden]="!formdata.controls.addr.errors"
-          class="alert alert-danger"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.addr.errors }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.addr.errors?.required">
-            Address is required
-          </div>
+          Enter a Valid Address
         </div>
       </div>
 
@@ -118,12 +108,10 @@
           <option value="Canada">Canada</option>
         </select>
         <div
-          [hidden]="!formdata.controls.country.errors"
-          class="alert alert-danger"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.country.errors }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.country.errors?.required">
-            Country is required
-          </div>
+          Country is required
         </div>
       </div>
 
@@ -140,12 +128,10 @@
           <option value="User">User</option>
         </select>
         <div
-          [hidden]="!formdata.controls.role.errors"
-          class="alert alert-danger"
+          [ngClass]="{ 'hide-visibility': !formdata.controls.role.errors }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.role.errors?.required">
-            Role is required
-          </div>
+          Role is required
         </div>
       </div>
 
@@ -155,8 +141,6 @@
         >
 
         <select
-          name="pets"
-          id="pet-select"
           class="form-control form-control-sm"
           formControlName="department"
         >
@@ -165,19 +149,49 @@
           <option value="Staff">Staff</option>
         </select>
         <div
-          [hidden]="!formdata.controls.department.errors"
-          class="alert alert-danger"
+          [ngClass]="{
+            'hide-visibility': !formdata.controls.department.errors
+          }"
+          class="mt-2 field-error"
         >
-          <div *ngIf="formdata.controls.department.errors?.required">
-            Department is required
-          </div>
+          Department is required
+        </div>
+      </div>
+
+      <div class="col-6 mt-5">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Select Landing Page</label
+        >
+
+        <select
+          class="form-control form-control-sm"
+          formControlName="landingPage"
+        >
+          <option value="" disabled>--Please choose an option--</option>
+          <option value="Dashboard">Dashboard</option>
+          <option value="Home">Home Page</option>
+          <option value="Analytics">Analytics Page</option>
+        </select>
+        <div
+          [ngClass]="{
+            'hide-visibility': !formdata.controls.department.errors
+          }"
+          class="mt-2 field-error"
+        >
+          Department is required
         </div>
       </div>
     </div>
 
-    <div>
-      <input type="submit" class="forsubmit" value="Submit" />
+    <div class="row">
+      <div class="col-4 offset-8 mt-5">
+        <input
+          type="submit"
+          class="forsubmit"
+          value="Submit"
+          [disabled]="formdata.invalid"
+        />
+      </div>
     </div>
-    
   </div>
 </form>

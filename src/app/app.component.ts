@@ -22,6 +22,7 @@ export class AppComponent {
       role: new FormControl('Admin', Validators.required),
       department: new FormControl('Finance', Validators.required),
       country: new FormControl('India', Validators.required),
+      landingPage: new FormControl('Dashboard', Validators.required),
     });
   }
 
