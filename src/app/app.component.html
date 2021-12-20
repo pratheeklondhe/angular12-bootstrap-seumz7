@@ -1,20 +1,20 @@
 <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label"
           >First Name</label
         >
         <input
           type="text"
           name="fname"
-          placeholder="alen"
+          placeholder="First Name"
           formControlName="fname"
           class="form-control form-control-sm"
         />
         <div
           [hidden]="!formdata.controls.fname.errors"
-          class="alert alert-danger"
+          class="mt-2 field-error"
         >
           <div *ngIf="formdata.controls.fname.errors?.required">
             First Name is required
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label"
           >Last Name</label
         >
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label"
           >Email Id</label
         >
@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label"
           >Mobile No</label
         >
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label">Address</label>
         <input
           type="addr"
@@ -105,7 +105,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label">Country</label>
 
         <select
@@ -127,7 +127,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label">Role</label>
 
         <select
@@ -149,7 +149,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-5">
         <label for="exampleFormControlInput1" class="form-label"
           >Department</label
         >
@@ -173,13 +173,11 @@
           </div>
         </div>
       </div>
-
-      <div class="col-6"></div>
-      <div class="col-10"></div>
-
-      <div class="col">
-        <input type="submit" class="forsubmit" value="Log In" />
-      </div>
     </div>
+
+    <div>
+      <input type="submit" class="forsubmit" value="Submit" />
+    </div>
+    
   </div>
 </form>
